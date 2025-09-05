@@ -6,15 +6,12 @@ public sealed class Spikes : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Creature creature = collision.gameObject.GetComponent<Creature>();
-        if (creature != null)
+        if (collision.gameObject.TryGetComponent<Creature>(out Creature creature))
         {
             creature.GetDamage(_damage);
 
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
             {
-                Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-
                 rb.velocity = new Vector2(rb.velocity.x, _playerForce);
             }
         }

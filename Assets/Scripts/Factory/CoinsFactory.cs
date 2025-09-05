@@ -5,7 +5,7 @@ using UniRx;
 using UnityEngine;
 using Zenject;
 
-public class EnemyFactory : MonoBehaviour
+public class CoinsFactory : MonoBehaviour
 {
     const float Offset = 0.05f;
     const float RandomForce = 12f;

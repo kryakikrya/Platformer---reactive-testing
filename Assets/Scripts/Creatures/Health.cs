@@ -1,7 +1,4 @@
-using System;
 using UniRx;
-using UnityEngine;
-
 public class Health
 {
     private readonly float _maxHealth;

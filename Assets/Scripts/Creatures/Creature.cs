@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using System;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public abstract class Creature : MonoBehaviour
@@ -10,6 +9,7 @@ public abstract class Creature : MonoBehaviour
 
     private float _invulnerabilityTime = 0.05f;
     private bool _isInvulnerability = false;
+
     protected virtual void Awake()
     {
         _health = new Health(_maxHealth);
@@ -29,7 +29,7 @@ public abstract class Creature : MonoBehaviour
         }
     }
 
-    private async UniTaskVoid InvulnerabilityFrame()
+    private async UniTask InvulnerabilityFrame()
     {
          await UniTask.Delay(TimeSpan.FromSeconds(_invulnerabilityTime));
         _isInvulnerability = false;

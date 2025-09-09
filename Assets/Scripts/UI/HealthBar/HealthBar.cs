@@ -2,7 +2,6 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
-using Cysharp.Threading.Tasks;
 using DG.Tweening;
 public sealed class HealthBar : MonoBehaviour
 {

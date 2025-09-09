@@ -6,7 +6,7 @@ public class CameraSwitcher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.TryGetComponent(out PlayerMovement playerMovement))
+        if (collider.gameObject.TryGetComponent(out PlayerMovement _))
         {
             _activeFrame.SetActive(true);
         }
@@ -14,7 +14,7 @@ public class CameraSwitcher : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collider)
     {
-        if (collider.gameObject.TryGetComponent(out PlayerMovement playerMovement))
+        if (collider.gameObject.TryGetComponent(out PlayerMovement _))
         {
             _activeFrame.SetActive(false);
         }

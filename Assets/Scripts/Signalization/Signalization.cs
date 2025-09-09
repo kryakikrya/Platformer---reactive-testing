@@ -16,7 +16,7 @@ public sealed class Signalization : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.gameObject.TryGetComponent(out PlayerMovement playerMovement))
+        if (collision.transform.gameObject.TryGetComponent(out PlayerMovement _))
         {
             if (_source.isPlaying == false)
             {
@@ -28,7 +28,7 @@ public sealed class Signalization : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.transform.gameObject.TryGetComponent(out PlayerMovement playerMovement))
+        if (collision.transform.gameObject.TryGetComponent(out PlayerMovement _))
         {
             FadeVolume(0);
         }
